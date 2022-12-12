@@ -799,6 +799,7 @@ contract Owner {
         bool active;
         string Role;
     }
+    
     mapping(address => OwnerStruct[]) private owners;
     uint _owners = 0;
 
@@ -832,6 +833,24 @@ contract Owner {
         require(msg.sender==superOwner, string(abi.encodePacked("Caller is not super owner ", msg.sender.toAsciiString())));
         _;
     }
+
+    // add owner Address    
+    function addAddress(address _address) public isSuperOwner {
+        ownerAddress.push(_address);
+        owners[_address].push(OwnerStruct({
+                active: true,
+                Role: 'MAIN_OWNER'
+            }));        
+    }
+
+    // delete owner Address    
+    function deleteAddress(address _address) public isSuperOwner {
+        for(uint256 i=0; i<ownerAddress.length;++i) {
+            if(ownerAddress[i] == _address) {
+                delete ownerAddress[i];
+            }
+        }
+    }
         
     function hasOwner() public view returns(bool) {
         if(msg.sender == superOwner) {
@@ -844,6 +863,7 @@ contract Owner {
         }
         return false;
     }
+
     // check if caller has role
     function hasRole(string memory role) public view returns(bool) {
         if(msg.sender == superOwner) {
@@ -868,7 +888,6 @@ contract Owner {
         for(uint256 i; i<=owners[_address].length; ++i) {
             string memory str = owners[_address][i].Role;
             if (keccak256(abi.encodePacked(str)) == keccak256(abi.encodePacked(role))) {
-            //if(str == role) {
                 return owners[_address][i].active = true;
             }
         }
@@ -885,7 +904,6 @@ contract Owner {
         for(uint256 i; i<=owners[_address].length; ++i) {
             string memory str = owners[_address][i].Role;
             if (keccak256(abi.encodePacked(str)) == keccak256(abi.encodePacked(role))) {
-            //if(owners[_address][i].Role == role) {
                 owners[_address][i].active = false;
             }
         }
