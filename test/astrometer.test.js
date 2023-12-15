@@ -34,7 +34,7 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
 
         await ethers.getImpersonatedSigner(so.address);
@@ -92,13 +92,13 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
     
         await ethers.provider.send('hardhat_impersonateAccount', [owner.address]); // get some eth from a miner
         await owner.sendTransaction({
               to: so2.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
     
         await ethers.getImpersonatedSigner(so.address);
@@ -123,13 +123,13 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
     
         await ethers.provider.send('hardhat_impersonateAccount', [owner.address]); // get some eth from a miner
         await owner.sendTransaction({
               to: so2.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
     
         await ethers.getImpersonatedSigner(so.address);
@@ -163,7 +163,7 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
     
         await ethers.getImpersonatedSigner(so.address);
@@ -181,7 +181,7 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
             
         await ethers.getImpersonatedSigner(so.address);
@@ -199,7 +199,7 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
             
         await ethers.getImpersonatedSigner(so.address);
@@ -220,13 +220,13 @@ describe("AstrometerToken", function () {
         
         await owner.sendTransaction({
               to: so.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
             
         //await ethers.provider.send('hardhat_impersonateAccount', [owner.address]); // get some eth from a miner
         await owner.sendTransaction({
               to: so2.address,
-              value: '127000000000000000',
+              value: '180000000000000000',
             });
             
         await ethers.getImpersonatedSigner(so.address);
