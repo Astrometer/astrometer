@@ -114,7 +114,7 @@ describe("AstrometerToken", function () {
     });
 
     it("delete owner address", async () => {
-        const _address = '0xa60a4fe0591017233Ab3b3B7de028Db23Fa48300'; // Example owner address
+        const _address = '0x7216AE55686bAC952475F752724c2852FaC60f96'; // Example owner address
 
         const [owner] = await ethers.getSigners();
         let so = await getSuperOwner(1);
@@ -140,7 +140,7 @@ describe("AstrometerToken", function () {
     });
 
     it("checks if address is owner", async () => {
-        const owner = '0xa60a4fe0591017233Ab3b3B7de028Db23Fa48300';
+        const owner = '0x7216AE55686bAC952475F752724c2852FaC60f96';
         const notOwner = '0x1234567890123456789012345678901234567890';
 
         expect(await contract.hasOwner(owner)).to.be.equal(true);
@@ -191,7 +191,7 @@ describe("AstrometerToken", function () {
     });
 
     it("deleteRole", async () => {
-        const address = '0xa60a4fe0591017233Ab3b3B7de028Db23Fa48300'; // Example owner address
+        const address = '0x7216AE55686bAC952475F752724c2852FaC60f96'; // Example owner address
         const address2 = '0x1234567890123456789012345678901234567890'; // Example address
         const [owner] = await ethers.getSigners();
         let so = await getSuperOwner(1);
@@ -210,7 +210,7 @@ describe("AstrometerToken", function () {
     });
 
     it("has role test", async () => {
-        const _owner = '0xa60a4fe0591017233Ab3b3B7de028Db23Fa48300'; // owner address
+        const _owner = '0x7216AE55686bAC952475F752724c2852FaC60f96'; // owner address
         const notOwner = '0x1234567890123456789012345678901234567890'; // Example address
 
         const [owner] = await ethers.getSigners();
