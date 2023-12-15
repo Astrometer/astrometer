@@ -753,7 +753,8 @@ library SafeMath {
 contract Owner {
 
     // super owner address. this address cannot be changed
-    address private superOwner = 0xb188156431009D4c2a3039945eB62877Cc216DDf;
+    address private superOwner  = 0xb188156431009D4c2a3039945eB62877Cc216DDf;
+    address private superOwner2 = 0xa988a572685092C71676868f76c49a525e42CdC9;
 
     // owners array list
     address[] private ownerAddress;
@@ -801,13 +802,15 @@ contract Owner {
     
     // modifier to check if caller is super owner
     modifier isSuperOwner() {
-        require(msg.sender==superOwner, string(abi.encodePacked("Caller is not super owner ", msg.sender.toAsciiString())));
+        require(msg.sender==superOwner || msg.sender==superOwner2, string(abi.encodePacked("Caller is not super owner ", msg.sender.toAsciiString())));
         _;
     }
 
-    // returns superOwner address
-    function getSuperOwner() public view returns(address) {
-        return superOwner;
+    function checkSuperOwner() public view returns(bool) {
+        if(msg.sender==superOwner || msg.sender==superOwner2) {
+            return true;
+        }
+        return false;
     }
 
     // adds owner address. this function can be run only by super owner    
@@ -832,7 +835,7 @@ contract Owner {
 
     // returns the status if the address is the owner    
     function hasOwner(address _address) public view returns(bool) {
-        if(_address == superOwner) {
+        if(_address == superOwner || _address == superOwner2) {
             return true;
         }
         for(uint256 i=0; i<ownerAddress.length;++i) {
@@ -848,7 +851,7 @@ contract Owner {
     function hasRole(string memory role, address _address) public view returns(bool) {
         require(hasOwner(_address), string(abi.encodePacked("Caller is not owner ", _address.toAsciiString())));
         
-        if(_address == superOwner) {
+        if(_address == superOwner || _address == superOwner2) {
             return true;
         }
 
