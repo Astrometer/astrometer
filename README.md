@@ -14,7 +14,7 @@ git clone https://github.com/Astrometer/astrometer.git
 
 2. Change to the project directory:
 
-cd Astrometer
+cd astrometer
 
 3. Install the required dependencies:
 
