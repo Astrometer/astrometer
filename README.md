@@ -10,11 +10,11 @@ Installation
 
 1. Clone this repository:
 
-git clone https://github.com/workouttoken/workout.git
+git clone https://github.com/Astrometer/astrometer.git
 
 2. Change to the project directory:
 
-cd workout
+cd Astrometer
 
 3. Install the required dependencies:
 
