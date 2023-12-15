@@ -8,13 +8,13 @@ describe("AstrometerToken", function () {
     async function getSuperOwner(number) {
         switch(number) {
             case 1:
-                return await ethers.provider.getSigner('0x1878fDF13b77546039Da7536046F386FE696890b');
+                return await ethers.provider.getSigner('0xb188156431009D4c2a3039945eB62877Cc216DDf');
                 break;
             case 'test':
                 return await ethers.provider.getSigner('0x0000000000000000000000000000000000000000');
                 break;
             default:
-                return await ethers.provider.getSigner('0x9AaC0e94c973a4C643E03BFeF0FE4b8063aa5B51');
+                return await ethers.provider.getSigner('0xa988a572685092C71676868f76c49a525e42CdC9');
                 break;
         }
     }
