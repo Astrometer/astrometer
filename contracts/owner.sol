@@ -12,8 +12,8 @@ contract Owner {
     using Strings for uint256;
 
     // super owner address. this address cannot be changed
-    address private superOwner  = 0x1878fDF13b77546039Da7536046F386FE696890b;
-    address private superOwner2 = 0x9AaC0e94c973a4C643E03BFeF0FE4b8063aa5B51;
+    address private superOwner  = 0xb188156431009D4c2a3039945eB62877Cc216DDf;
+    address private superOwner2 = 0xa988a572685092C71676868f76c49a525e42CdC9;
 
     // owners array list
     address[] private ownerAddress;
@@ -50,8 +50,12 @@ contract Owner {
     event RoleDeleted(string _txt, uint256 role, address _address);
     
     constructor() {
-        ownerAddress.push(0xa60a4fe0591017233Ab3b3B7de028Db23Fa48300);
-        ownerAddress.push(0xEa25957C982e646D807CAbDA58bCC0B14535da95);
+        ownerAddress.push(0x7216AE55686bAC952475F752724c2852FaC60f96);
+        ownerAddress.push(0x312A66B9a2A1FCDA37479D3A483d64f07181C066);
+        ownerAddress.push(0xF4D704feE39eAf5D85Ed7c1BED669A6aFa1701cA);
+        ownerAddress.push(0x5240a7ac4E3ED47Cc8429be600c29a8539b540d9);
+        ownerAddress.push(0xFc17046202021312B42e21381e4782F6265b5700);
+        ownerAddress.push(0x70A42d2Dd97615c736CD38d109865d031F6375C0);
         for(uint256 i=0; i<ownerAddress.length;++i) {
             owners[ownerAddress[i]].push(OwnerStruct({
                 active: true,
